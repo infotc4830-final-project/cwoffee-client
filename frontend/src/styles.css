@@ -2,3 +2,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body { position: relative; }
+
+
+/* Home */
+#home
+{
+  height: 80vh;
+  --tw-bg-opacity: 1;
+    background-color: hsl(var(--pc) / var(--tw-bg-opacity))
+}
+app-home
+{
+  position: absolute;
+  width: 100px;
+  height: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Order */
+#order
+{
+  height: 80vh;
+  --tw-bg-opacity: 1;
+    background-color: hsl(var(--n) / var(--tw-bg-opacity))
+}
+app-order
+{
+  position: absolute;
+  width: 100px;
+  height: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Review */
+#review
+{
+  height: 80vh;
+  --tw-bg-opacity: 1;
+    background-color: hsl(var(--s) / var(--tw-bg-opacity))
+}
+app-review
+{
+  position: absolute;
+  width: 100px;
+  height: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,1 +1,43 @@
-<button class="btn">Hello daisyUI</button>
+<div class="navbar bg-base-100">
+  <div class="flex-none">
+    <button class="btn btn-square btn-outline btn-accent dropdown dropdown-hover">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#review">Review</a></li>
+      </ul>
+    </button>
+
+  </div>
+  <div class="flex-1">
+    <a href="#home" class="btn btn-ghost normal-case text-xl">Cwoffee Abound</a>
+  </div>
+</div>
+
+<div class="carousel w-full">
+  <div id="home" class="carousel-item relative w-full">
+    <!-- <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full" /> -->
+    <app-home></app-home>
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#review" class="btn btn-circle">❮</a>
+      <a href="#order" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="order" class="carousel-item relative w-full">
+    <app-order></app-order>
+    <!-- <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" class="w-full" /> -->
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#home" class="btn btn-circle">❮</a>
+      <a href="#review" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="review" class="carousel-item relative w-full">
+    <app-review></app-review>
+    <!-- <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" class="w-full" /> -->
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#order" class="btn btn-circle">❮</a>
+      <a href="#home" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+</div>
