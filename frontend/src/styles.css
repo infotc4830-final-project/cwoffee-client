@@ -93,3 +93,7 @@ footer
   position: relative;
   bottom: 0;
 }
+.footer
+{
+  padding: 1.5em 4em;
+}
