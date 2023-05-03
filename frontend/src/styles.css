@@ -3,21 +3,36 @@
 @tailwind components;
 @tailwind utilities;
 
-body { position: relative; }
-
+body
+{
+  position: relative;
+  height: 100vh;
+}
+app-root
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
 
 /* Home */
 #home
 {
-  height: 80vh;
+  height: 100%;
   --tw-bg-opacity: 1;
     background-color: hsl(var(--pc) / var(--tw-bg-opacity))
+
+  /* coffee bean background */
+  /* background-image: url(./assets/images/coffee-bean-background.jpg);
+  background-position: center;
+  background-size: cover; */
 }
 app-home
 {
   position: absolute;
   width: 100px;
-  height: 80vh;
+  height: 100%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -27,7 +42,7 @@ app-home
 /* Order */
 #order
 {
-  height: 80vh;
+  height: 100%;
   --tw-bg-opacity: 1;
     background-color: hsl(var(--n) / var(--tw-bg-opacity))
 }
@@ -35,7 +50,7 @@ app-order
 {
   position: absolute;
   width: 100px;
-  height: 80vh;
+  height: 100%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -44,7 +59,7 @@ app-order
 /* Review */
 #review
 {
-  height: 80vh;
+  height: 100%;
   --tw-bg-opacity: 1;
     background-color: hsl(var(--s) / var(--tw-bg-opacity))
 }
@@ -52,9 +67,29 @@ app-review
 {
   position: absolute;
   width: 100px;
-  height: 80vh;
+  height: 100%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.carousel
+{
+  position: relative;
+  flex-grow: 1;
+  width: 90%;
+  margin: 2em auto 2em auto;
+  gap: 5%;
+}
+
+.navbar
+{
+  padding: 2em;
+}
+
+footer
+{
+  position: relative;
+  bottom: 0;
 }
