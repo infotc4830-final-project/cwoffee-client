@@ -1,4 +1,18 @@
 <p *ngFor="let review of reviews">{{review.title}}, {{review.content}}</p>
 
 <button (click)="postReview()">post test review</button>
-  
+
+
+<div class="chat chat-start w-full">
+  <div class="chat-bubble">It's over Anakin, <br/>I have the high ground.</div>
+</div>
+<div class="chat chat-end">
+  <div class="chat-bubble bg-primary">You underestimate my power!</div>
+</div>
+
+
+<!-- bottom section to enter text -->
+<div class="w-full post-area">
+  <input type="text" placeholder="Type your reviews here!" class="input input-bordered input-primary w-5/12" />
+  <div class="btn btn-outline btn-primary">Post</div>
+</div>
