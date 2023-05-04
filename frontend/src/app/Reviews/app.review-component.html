@@ -1,1 +1,4 @@
-<p>review page</p>
+<p *ngFor="let review of reviews">{{review.title}}, {{review.content}}</p>
+
+<button (click)="postReview()">post test review</button>
+  

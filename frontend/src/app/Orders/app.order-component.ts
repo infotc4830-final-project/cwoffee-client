@@ -1,16 +1,17 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { AppService } from "../app.service";
 import { HttpClient} from "@angular/common/http";
 import { async } from "@angular/core/testing";
 import axios from "axios";
+import { map, pipe, Subscription } from "rxjs";
 
 @Component({
   selector:'app-order',
   templateUrl: './app.order-component.html'
 })
 
-export class OrderComponent {
+export class OrderComponent implements OnInit {
   
-  httpClient: HttpClient;
   message: string;
 
   /*menuItems will contain:
@@ -26,28 +27,17 @@ export class OrderComponent {
 		}],
     menuItem.type
     menuItem.category
-    
+
   */
   menuItems: any[];
 
-  constructor(public http: HttpClient) {
-    this.httpClient = http;
+  constructor(public appService: AppService) {
     this.message = "";
     this.menuItems = [];
   }
 
   ngOnInit(){
-    this.fetchMenu();
-  }
-
-  fetchMenu()
-  {
-      this.httpClient.get<{message: string, data: any}>('http://localhost:5001/api/menu/get-menu')
-      .subscribe(data => {
-        this.message = data.message;
-        this.menuItems = data.data;
-      })   
-      return;
+    this.appService.fetchMenu().pipe(map(data => { this.menuItems = data.data })).subscribe(); 
   }
 
 }
