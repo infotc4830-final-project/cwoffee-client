@@ -123,10 +123,19 @@ app-order
 
 .post-area
 {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   margin: 1em;
   display: flex;
   gap: 2em;
   justify-content: center;
 }
+
+app-order .carousel
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 4em;
+  overflow-y: hidden;
+}
+
