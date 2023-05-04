@@ -139,3 +139,7 @@ app-order .carousel
   overflow-y: hidden;
 }
 
+.chat-start
+{
+  margin: 1em 6em;
+}
