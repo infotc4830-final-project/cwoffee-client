@@ -24,13 +24,10 @@ export class ReviewComponent {
       this.appService.fetchReviews().pipe(map(data => { this.reviews = data.data })).subscribe(); 
   }  
 
-  postReview(){
-    const review: Review = {username: "Test", title: "Test", content: "Test"};
-    this.appService.postReview(review).subscribe(
-      review => {
-        console.log(review);
-      }
-  );
+  postReview()
+  {
+    const review: Review = {username: "Tesat", title: "Testm", content: "Testaa"};
+    this.appService.postReview(review).subscribe(response => { console.log(response); });
   }
 
   
