@@ -1,9 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { AppService } from "../app.service";
-import { HttpClient} from "@angular/common/http";
-import { async } from "@angular/core/testing";
-import axios from "axios";
-import { map, pipe, Subscription } from "rxjs";
+import { map } from "rxjs";
 
 @Component({
   selector:'app-order',

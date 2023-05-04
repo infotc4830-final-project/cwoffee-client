@@ -25,7 +25,7 @@ export class ReviewComponent {
   }  
 
   postReview(){
-    const review: Review = {username: "Test", title: "Test", content: "Test", menuItemId: "123456789010"};
+    const review: Review = {username: "Test", title: "Test", content: "Test"};
     this.appService.postReview(review).subscribe(
       review => {
         console.log(review);
