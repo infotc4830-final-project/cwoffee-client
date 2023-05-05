@@ -30,7 +30,16 @@ export class ReviewComponent {
   {
     var content = this.reviewText;
     const review: Review = {content: content};
-    this.appService.postReview(review).subscribe(response => { console.log(response); });
+    this.appService.postReview(review).subscribe(response => { 
+      if(response.message === "success")
+      {
+        alert("Successfully created post! Refresh the page to view changes.");
+      }
+      else
+      {
+        alert("Failed to create post.");
+      }
+     });
     this.newPost = true;
   }
 
