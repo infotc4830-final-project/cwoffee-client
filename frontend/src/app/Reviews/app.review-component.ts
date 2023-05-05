@@ -14,10 +14,12 @@ import { Review } from "./review";
 export class ReviewComponent {
   message: string;
   reviews: any[];
+  newPost: boolean;
 
   constructor(public appService: AppService) {
     this.message = "";
     this.reviews = [];
+    this.newPost = false;
   }
 
   ngOnInit(){
