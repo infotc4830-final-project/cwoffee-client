@@ -107,12 +107,15 @@ app-home div div
 {
   background-image: url(./assets/images/coffee-art-wood.jpg);
   background-position: center;
-  /* background-image: url(./assets/images/coffee-cup-with-beans.jpg);
-  background-size: contain;
-  background-position: center; */
   /* background-image: url(./assets/images/Mexican-Coffee.jpg);
   background-size: auto 100%;
   background-position: center; */
+}
+#hero2
+{
+  background-image: url(./assets/images/coffee-bean-background.jpg);
+  background-size: contain;
+  background-position: center;
 }
 
 app-order
