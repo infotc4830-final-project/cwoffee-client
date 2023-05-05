@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserInfo } from './Login/userInfo';
+import { OrderComponent } from './Orders/app.order-component';
+import { Order } from './Orders/order';
 import { Review } from './Reviews/review';
 
 @Injectable({providedIn:"root"})
@@ -35,6 +37,11 @@ export class AppService {
     postRegister(registerInfo: UserInfo): Observable<UserInfo>
     {
         return this.httpClient.post<UserInfo>('http://localhost:5001/api/user/register', registerInfo);
+    }
+
+    postOrder(order: Order): Observable<Order>
+    {
+        return this.httpClient.post<Order>('http://localhost:5001/api/order/new-order', order);
     }
 
 }
