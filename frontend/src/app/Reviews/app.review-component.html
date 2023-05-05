@@ -1,17 +1,17 @@
 <div class="scroll">
 
 <div *ngFor="let review of reviews" class="chat chat-start w-full">
-  <div class="chat-bubble">{{review.content}}<br/>Posted by {{review.username}}</div>
+  <div class="chat-bubble">{{review.content}}</div>
 </div>
 
   <div class="chat chat-end" *ngIf="newPost">
-    <div class="chat-bubble bg-primary">You underestimate my power!</div>
+    <div class="chat-bubble bg-primary">{{reviewText}}</div>
   </div>
 
 
   <!-- bottom section to enter text -->
   <div class="w-full post-area">
-    <input type="text" placeholder="Type your reviews here!" class="input input-bordered input-primary w-5/12" />
+    <input type="text" placeholder="Type your reviews here!" class="input input-bordered input-primary w-5/12" [(ngModel)]="reviewText"/>
     <div (click)="postReview()" class="btn btn-outline btn-primary">Post</div>
   </div>
 

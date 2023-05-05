@@ -18,11 +18,29 @@ export class LoginComponent {
   
   handleRegister(){
     const userInfo: UserInfo = {username: this.username, password: this.password};
-    this.appService.postRegister(userInfo).subscribe(response => { console.log(response); });
+    this.appService.postRegister(userInfo).subscribe(response => { 
+      if(response.message === "success")
+      {
+        alert("Registered and logged in as " + this.username + "!");
+      }
+      else 
+      {
+        alert("Failed to register.");
+      }
+     });
   }
 
   handleLogin(){
     const userInfo: UserInfo = {username: this.username, password: this.password};
-    this.appService.postLogin(userInfo).subscribe(response => { console.log(response); });
+    this.appService.postLogin(userInfo).subscribe(response => { 
+      if(response.message === "success")
+      {
+        alert("Logged in as " + this.username + "!");
+      }
+      else 
+      {
+        alert("Invalid username or password.");
+      }
+     });
   }
 }

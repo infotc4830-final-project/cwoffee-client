@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { AppService } from "../app.service";
 import { map } from "rxjs";
+import { Order } from "./order";
 
 @Component({
   selector:'app-order',
@@ -10,31 +11,48 @@ import { map } from "rxjs";
 export class OrderComponent implements OnInit {
   
   message: string;
-
-  /*menuItems will contain:
-
-    menuItem._id
-    menuItem.name
-    menuItem.price
-    menuItem.description
-    menuItem.options: 
-    [{
-			style: { type: String },
-			price: { type: String },
-		}],
-    menuItem.type
-    menuItem.category
-
-  */
+  
   menuItems: any[];
+
+  cartItems: any[];
 
   constructor(public appService: AppService) {
     this.message = "";
     this.menuItems = [];
+    this.cartItems = [];
   }
 
   ngOnInit(){
     this.appService.fetchMenu().pipe(map(data => { this.menuItems = data.data })).subscribe(); 
+  }
+
+  addToCart(menuItem: any)
+  {
+    this.cartItems.push(menuItem);
+  }
+
+  newOrder()
+  {
+    let items = "";
+    let price: number = 0;
+
+    this.cartItems.forEach(item => {
+      items += (item.name + " ")
+      price += parseFloat(item.price)
+    })
+
+    const order: Order = {items: items, totalPrice: price.toString()};
+    this.appService.postOrder(order).subscribe(response => { 
+        if(response.message === "success")
+        {
+          alert("Created an order of " + items + " for $" + price + "!")
+        }
+        else
+        {
+          alert("Failed to create order.");
+        }
+     });
+    this.cartItems = [];
   }
 
 }

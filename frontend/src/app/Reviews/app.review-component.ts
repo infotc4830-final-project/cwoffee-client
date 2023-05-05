@@ -12,12 +12,12 @@ import { Review } from "./review";
 })
 
 export class ReviewComponent {
-  message: string;
+  reviewText: string;
   reviews: any[];
   newPost: boolean;
 
   constructor(public appService: AppService) {
-    this.message = "";
+    this.reviewText = "";
     this.reviews = [];
     this.newPost = false;
   }
@@ -28,9 +28,19 @@ export class ReviewComponent {
 
   postReview()
   {
-    var content = this.message;
-    const review: Review = {username: "Tesat", title: "Testm", content: content};
-    this.appService.postReview(review).subscribe(response => { console.log(response); });
+    var content = this.reviewText;
+    const review: Review = {content: content};
+    this.appService.postReview(review).subscribe(response => { 
+      if(response.message === "success")
+      {
+        alert("Successfully created post! Refresh the page to view changes.");
+      }
+      else
+      {
+        alert("Failed to create post.");
+      }
+     });
+    this.newPost = true;
   }
 
 
