@@ -35,13 +35,23 @@ export class OrderComponent implements OnInit {
   {
     let items = "";
     let price: number = 0;
+
     this.cartItems.forEach(item => {
       items += (item.name + " ")
       price += parseFloat(item.price)
     })
-    const order: Order = {items: items, totalPrice: price.toString()};
-    this.appService.postOrder(order).subscribe(response => { console.log(response); });
 
+    const order: Order = {items: items, totalPrice: price.toString()};
+    this.appService.postOrder(order).subscribe(response => { 
+        if(response.message === "success")
+        {
+          alert("Created an order of " + items + " for $" + price + "!")
+        }
+        else
+        {
+          alert("Failed to create order.");
+        }
+     });
     this.cartItems = [];
   }
 
