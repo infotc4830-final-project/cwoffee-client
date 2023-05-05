@@ -1,6 +1,6 @@
 <div class="navbar bg-neutral gap-4">
   <div>
-    <a href="#home" class="btn btn-outline btn-primary normal-case text-xl">Cwoffee Abound</a>
+    <a href="" class="btn btn-outline btn-primary normal-case text-xl">Cwoffee Abound</a>
   </div>
 
   <div>
@@ -9,6 +9,12 @@
 
   <div>
     <a href="#review" class="btn btn-outline btn-secondary normal-case text-lg">Leave a Review</a>
+
+  </div>
+
+  <div>
+    <a href="login" class="btn btn-outline btn-primary normal-case text-lg">Login/Register</a>
+    <router-outlet></router-outlet>
   </div>
 
   <!-- if we add an image for the user -->
@@ -20,13 +26,13 @@
 
   <!-- if we do not add an image for the user -->
   <!-- *ngIf="null; else login" -->
-  <app-login></app-login>
 </div>
 
 <div class="carousel carousel-center rounded-box">
   <div id="home" class="carousel-item relative w-full">
     <!-- <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full" /> -->
-    <app-home class="w-full scroll"></app-home>
+    <!--<app-home class="w-full scroll"></app-home> -->
+    <router-outlet></router-outlet>
     <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#review" class="btn btn-circle">❮</a>
       <a href="#order" class="btn btn-circle">❯</a>
