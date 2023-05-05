@@ -1,14 +1,12 @@
 <div class="scroll">
-  <button (click)="postReview()">post test review</button>
 
+  <div *ngFor="let review of reviews" class="chat chat-start w-full">
+    <div class="chat-bubble">{{review.content}}<br/>{{review.username}}</div>
+  </div>
 
-<div *ngFor="let review of reviews" class="chat chat-start w-full">
-  <div class="chat-bubble">{{review.content}}<br/>{{review.username}}</div>
-</div>
-
-<div class="chat chat-end" *ngIf="newPost">
-  <div class="chat-bubble bg-primary">You underestimate my power!</div>
-</div>
+  <div class="chat chat-end" *ngIf="newPost">
+    <div class="chat-bubble bg-primary">You underestimate my power!</div>
+  </div>
 
 
   <!-- bottom section to enter text -->
