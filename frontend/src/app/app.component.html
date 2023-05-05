@@ -20,42 +20,7 @@
 
   <!-- if we do not add an image for the user -->
   <!-- *ngIf="null; else login" -->
-  <div class="login-area">
-
-    <!-- logged in -->
-    <div class="avatar placeholder">
-      <div class="bg-neutral-focus text-neutral-content rounded-full w-16 ring ring-primary ring-offset-base-100 ring-offset-2">
-        <span class="text-3xl">You</span>
-      </div>
-    </div>
-    <!-- nog logged in -->
-      <div>
-        <!-- The button to open modal -->
-        <label for="my-modal" class="btn btn-outline btn-primary normal-case text-lg">Login</label>
-
-        <!-- Put this part before </body> tag -->
-        <input type="checkbox" id="my-modal" class="modal-toggle" />
-        <div class="modal">
-          <div class="modal-box">
-            <!-- form goes here -->
-            <form action="submit">
-              <label for="username">Username</label>
-              <input id="username" type="text" placeholder="username">
-              <br>
-              <label for="password">Password</label>
-              <input id="password" type="text" placeholder="password">
-              <div class="modal-action">
-                <label for="my-modal" class="btn">Log in</label>
-                <label for="my-modal" class="btn btn-error">Cancel</label>
-              </div>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-  </div>
-
+  <app-login></app-login>
 </div>
 
 <div class="carousel carousel-center rounded-box">
