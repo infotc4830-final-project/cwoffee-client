@@ -7,6 +7,7 @@ import { OrderComponent } from './Orders/app.order-component';
 import { ReviewComponent } from './Reviews/app.review-component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LoginComponent } from './Login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

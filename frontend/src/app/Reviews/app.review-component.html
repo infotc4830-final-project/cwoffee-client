@@ -1,8 +1,8 @@
 <div class="scroll">
 
-  <div *ngFor="let review of reviews" class="chat chat-start w-full">
-    <div class="chat-bubble">{{review.content}}<br/>{{review.username}}</div>
-  </div>
+<div *ngFor="let review of reviews" class="chat chat-start w-full">
+  <div class="chat-bubble">{{review.content}}<br/>Posted by {{review.username}}</div>
+</div>
 
   <div class="chat chat-end" *ngIf="newPost">
     <div class="chat-bubble bg-primary">You underestimate my power!</div>

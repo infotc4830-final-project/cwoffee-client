@@ -18,13 +18,13 @@
             <!-- form goes here -->
             <form action="submit">
               <label for="username">Username</label>
-              <input id="username" type="text" placeholder="username">
+              <input id="username" name="username" type="text" placeholder="username" [(ngModel)]="username">
               <br>
-              <label for="password">Password</label>
-              <input id="password" type="text" placeholder="password">
+              <label for="password" >Password</label>
+              <input id="password" name="password" type="text" placeholder="password" [(ngModel)]="password">
               <div class="modal-action">
-                <label for="my-modal" class="btn">Log in</label>
-                <label for="my-modal" class="btn">Register</label>
+                <label for="my-modal" (click)="handleLogin()" class="btn">Log in</label>
+                <label for="my-modal" (click)="handleRegister()" class="btn">Register</label>
                 <label for="my-modal" class="btn btn-error">Cancel</label>
               </div>
             </form>

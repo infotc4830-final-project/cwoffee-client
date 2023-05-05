@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserInfo } from './Login/userInfo';
 import { Review } from './Reviews/review';
 
 @Injectable({providedIn:"root"})
@@ -23,8 +24,17 @@ export class AppService {
 
     postReview(review: Review): Observable<Review>
     {
-        alert('made it here');
         return this.httpClient.post<Review>('http://localhost:5001/api/reviews/create-new', review);
+    }
+
+    postLogin(loginInfo: UserInfo): Observable<any>
+    {
+        return this.httpClient.post<UserInfo>('http://localhost:5001/api/user/login', loginInfo);
+    }
+
+    postRegister(registerInfo: UserInfo): Observable<UserInfo>
+    {
+        return this.httpClient.post<UserInfo>('http://localhost:5001/api/user/register', registerInfo);
     }
 
 }
