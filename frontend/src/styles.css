@@ -130,16 +130,23 @@ app-order
   justify-content: center;
 }
 
-app-order .scroll
+app-order .menu
 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
-  justify-items: center;
   align-content: space-evenly;
-  align-items: center;
   row-gap: 4em;
-  overflow-y: auto;
+  column-gap: 2em;
+  overflow-y: auto; */
+}
+
+app-order .order-page
+{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .chat-start
@@ -156,7 +163,10 @@ app-order .scroll
 {
   display: none;
 }
+
+.cart {padding: 0 2em;}
+
 .item
 {
-  height: 66.66666666%;
+  height: 66.66666%;
 }

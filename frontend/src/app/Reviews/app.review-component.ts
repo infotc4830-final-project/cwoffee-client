@@ -21,15 +21,16 @@ export class ReviewComponent {
   }
 
   ngOnInit(){
-      this.appService.fetchReviews().pipe(map(data => { this.reviews = data.data })).subscribe(); 
-  }  
+      this.appService.fetchReviews().pipe(map(data => { this.reviews = data.data })).subscribe();
+  }
 
   postReview()
   {
-    const review: Review = {username: "Tesat", title: "Testm", content: "Testaa"};
+    var content = this.message;
+    const review: Review = {username: "Tesat", title: "Testm", content: content};
     this.appService.postReview(review).subscribe(response => { console.log(response); });
   }
 
-  
+
 
 }

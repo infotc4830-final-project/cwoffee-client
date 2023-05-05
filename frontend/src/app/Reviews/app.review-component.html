@@ -1,17 +1,20 @@
-<button (click)="postReview()">post test review</button>
+<div class="scroll">
+  <button (click)="postReview()">post test review</button>
 
 
-<div *ngFor="let review of reviews" class="chat chat-start w-full">
-  <div class="chat-bubble">{{review.title}}, <br/>{{review.content}}</div>
-</div>
+  <div *ngFor="let review of reviews" class="chat chat-start w-full">
+    <div class="chat-bubble">{{review.title}}, <br/>{{review.content}}</div>
+  </div>
 
-<div class="chat chat-end">
-  <div class="chat-bubble bg-primary">You underestimate my power!</div>
-</div>
+  <div class="chat chat-end">
+    <div class="chat-bubble bg-primary">You underestimate my power!</div>
+  </div>
 
 
-<!-- bottom section to enter text -->
-<div class="w-full post-area">
-  <input type="text" placeholder="Type your reviews here!" class="input input-bordered input-primary w-5/12" />
-  <div class="btn btn-outline btn-primary">Post</div>
+  <!-- bottom section to enter text -->
+  <div class="w-full post-area">
+    <input type="text" placeholder="Type your reviews here!" class="input input-bordered input-primary w-5/12" />
+    <div (click)="postReview()" class="btn btn-outline btn-primary">Post</div>
+  </div>
+
 </div>
