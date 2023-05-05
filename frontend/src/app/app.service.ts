@@ -34,7 +34,7 @@ export class AppService {
         return this.httpClient.post<UserInfo>('http://localhost:5001/api/user/login', loginInfo);
     }
 
-    postRegister(registerInfo: UserInfo): Observable<UserInfo>
+    postRegister(registerInfo: UserInfo): Observable<any>
     {
         return this.httpClient.post<UserInfo>('http://localhost:5001/api/user/register', registerInfo);
     }
